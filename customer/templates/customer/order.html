@@ -1,0 +1,205 @@
+{% extends 'customer/base.html' %}
+
+{% block content %}
+
+<a href="test.html">Visit W3Schools.com!</a>
+
+<div class="container mb-5">
+    <div class="row justify-content-center mt-1">
+        <div class="col-md-12 col-sm-12 p-4">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="pt-5">
+                    {% for appetiser in appetizers %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ appetiser.image.url}}" width="150" height="100">
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input"
+                                        value="{{ appetiser.pk }}">
+                                    <label class="form-check-label mx-5">{{ appetiser.name }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ appetiser.price }}</p>
+                            </div>
+                            <p>{{ appetiser.description}}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    {% for entre in entres %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ entre.image.url}}" width="150" height="100">
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input"
+                                        value="{{ entre.pk }}">
+                                    <label class="form-check-label mx-5">{{ entre.name}}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ entre.price }}</p>
+                            </div>
+                            <p>{{ entre.description}}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    {% for dessert in desserts %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ dessert.image.url}}" width="150" height="100">
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input"
+                                        value="{{ dessert.pk }}">
+                                    <label class="form-check-label mx-5">{{ dessert.name }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ dessert.price }}</p>
+                            </div>
+                            <p>{{ dessert.description}}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+
+                <div class="pt-5">
+                    {% for drink in drinks %}
+                    <div class="row">
+                        <div class="col-md-2 col-sm-12">
+                            <img class="rounded" src="{{ drink.image.url}}" width="150" height="100">
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="d-flex flex-row">
+                                <div class="form-group form-check">
+                                    <input type="checkbox" name="items[]" class="form-check-input"
+                                        value="{{ drink.pk }}">
+                                    <label class="form-check-label mx-5">{{ drink.name }}</label>
+                                </div>
+                                <p class="font-weight-bold pl-5">{{ drink.price }}</p>
+                            </div>
+                            <p>{{ drink.description}}</p>
+                        </div>
+                    </div>
+                    <hr />
+                    {% endfor %}
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="name">Your Name</label>
+                    <input required class="form-control" type="text" placeholder="Name" name="name">
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="name">Email address</label>
+                    <input required class="form-control" type="text" placeholder="name@email.com" name="email">
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="name">Street</label>
+                    <input required class="form-control" type="text" placeholder="10 High Street" name="street">
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">City</label>
+                            <input required class="form-control" type="text" placeholder="London" name="city">
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">County</label>
+                            <input required class="form-control" type="text" placeholder="London" name="county">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">Post Code</label>
+                            <input required class="form-control" type="text" placeholder="SW1A 1AA" name="postcode">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-dark mt-5">Place Order</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Launch demo modal
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<hr />
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
