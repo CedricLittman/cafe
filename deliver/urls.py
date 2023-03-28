@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from customer.views import Index, About, Order, OrderConfirmation, OrderPayConfirmation
+from customer.views import Index, About, Order, OrderConfirmation
+from customer.views import OrderPayConfirmation
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,3 +30,5 @@ urlpatterns = [
     path('payment-confirmation/', OrderPayConfirmation.as_view(), name='payment-confirmation'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += staticfiles_urlpatterns()

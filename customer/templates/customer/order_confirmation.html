@@ -18,11 +18,14 @@
             <p class="font-weight-bold pt-4">Total: {{ price }}</p>
         </div>
     </div>
-    <div class="class row justify_content-center">
-        <div class="col-md-6 justify-content-center">
+    <div class="row justify_content-center pb-2 pt-5">
+        <div class="col-md-6 text-center">
+            <h3>Pay Now With Paypal or Pay Cash On Delivery</h3>
+        </div>
+    </div>
+    <div class="row justify_content-center pb-5">
+        <div class="col-md-6 text-center">
             <div id="paypal-button">
-
-
             </div>
         </div>
     </div>
@@ -38,7 +41,6 @@
             const cookies = document.cookie.split(';');
             for (let i = 0; i < cookies.length; i++) {
                 const cookie = cookies[i].trim();
-                // Does this cookie string begin with the name we want?
                 if (cookie.substring(0, name.length + 1) === (name + '=')) {
                     cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                     break;
