@@ -2,8 +2,6 @@
 
 {% block content %}
 
-<a href="test.html">Visit W3Schools.com!</a>
-
 <div class="container mb-5">
     <div class="row justify-content-center mt-1">
         <div class="col-md-12 col-sm-12 p-4">
@@ -120,44 +118,40 @@
                         </div>
                     </div>
 
-
                     <div class="col-md-4 col-sm-12">
                         <div class="form-group pt-3">
-                            <label for="name">County</label>
-                            <input required class="form-control" type="text" placeholder="London" name="county">
+                            <label for="name">State</label>
+                            <input required class="form-control" type="text" placeholder="CA" name="state" />
                         </div>
                     </div>
 
                     <div class="col-md-4 col-sm-12">
                         <div class="form-group pt-3">
-                            <label for="name">Post Code</label>
-                            <input required class="form-control" type="text" placeholder="SW1A 1AA" name="postcode">
+                            <label for="name">Zip Code</label>
+                            <input required class="form-control" type="text" placeholder="94117" name="zip" />
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-dark mt-5">Place Order</button>
+
+                
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                    Launch demo modal
+                <button type="button" class="btn btn-dark mt-3" data-mdb-toggle="modal" data-mdb-target="#submitModal">
+                    Richey!
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                <div class="modal fade" id="submitModal" tabindex="-1" aria-labelledby="submitModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                ...
+                                <h5 class="modal-title" id="submitModalLabel">Submit Your Order!</h5>
+                                <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                    aria-label="Close"></button>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-light" data-mdb-dismiss="modal">Go Back</button>
+                                <button type="submit" class="btn btn-dark">Place Order!</button>
                             </div>
                         </div>
                     </div>
@@ -167,39 +161,6 @@
 
     </div>
 </div>
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<hr />
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          ...
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 {% endblock content %}
