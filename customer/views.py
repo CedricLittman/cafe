@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+import json
 from django.views import View
 from django.core.mail import send_mail
 from .models import MenuItem, Category, OrderModel
@@ -68,9 +69,47 @@ class Order(View):
         order = OrderModel.objects.create(price=price)
         order.items.add(*item_ids)
 
+        # Send confirmation to console
+        body = ('Thank you for your order. Your food is being made and will be delivered soon!\n'
+                f'Your total: {price}\n'
+                'Thank you again for your order!')
+        send_mail(
+            'Thank You For Your Order',
+            body,
+            'example@example.com',
+            [email],
+            fail_silently=False
+        )
+
         context = {
             'items': order_items['items'],
             'price': price
         }
 
+        return redirect('order-confirmation', pk=order.pk)
+
+class OrderConfirmation(View):
+    def get(self, request, pk, *args, **kwargs):
+        order = OrderModel.objects.get(pk=pk)
+
+        context = {
+            'pk': order.pk,
+            'items': order.items,
+            'price': order.price,              
+        }
+
         return render(request, 'customer/order_confirmation.html', context)
+
+    def post(self, request, pk, *args, **kwargs):
+        data = json.loads(request.body)
+        if data['isPaid']:
+            order = OrderModel.objects.get(pk=pk)
+            order.is_paid = True
+            order.save()
+
+        return redirect('payment-confirmation')
+
+
+class OrderPayConfirmation(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'customer/order_pay_confirmation.html')
