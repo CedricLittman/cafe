@@ -23,13 +23,11 @@ from customer.views import OrderPayConfirmation
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls'))
-    
+    path('accounts/', include('allauth.urls')),
+    path('about/', About.as_view(), name='about'),
+    path('', Index.as_view(), name='index'),    
+    path('order/', Order.as_view(), name='order'),
     path('order-confirmation/<int:pk>', OrderConfirmation.as_view(), name='order-confirmation'),
     path('payment-confirmation/', OrderPayConfirmation.as_view(), name='payment-confirmation'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += staticfiles_urlpatterns()
-
-

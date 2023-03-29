@@ -39,6 +39,7 @@ AUTHENTICATION_BACKENDS = [
 INSTALLED_APPS = [
     'customer',
     'restaurant',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -68,7 +69,7 @@ ROOT_URLCONF = 'deliver.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,3 +143,11 @@ MEDIA_URL ='/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+ACCOUNT_ADAPTER = 'restaurant.account.adapters.NoNewUsersAccountAdapter'
+
+LOGIN_REDIRECT_URL = 'dashboard'
+
+LOGIN_URL = '/accounts/login/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
