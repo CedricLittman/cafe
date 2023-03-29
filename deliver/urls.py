@@ -18,12 +18,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from customer.views import Index, About, Order, OrderConfirmation
-from customer.views import OrderPayConfirmation
+from customer.views import Index, About, Order, OrderConfirmation, OrderPayConfirmation
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('restaurant', include('restaurant.urls')),
     path('about/', About.as_view(), name='about'),
     path('', Index.as_view(), name='index'),    
     path('order/', Order.as_view(), name='order'),

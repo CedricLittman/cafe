@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'customer',
     'restaurant',
     'crispy_forms',
+    'crispy_bootstrap4',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -144,10 +145,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-ACCOUNT_ADAPTER = 'restaurant.account.adapters.NoNewUsersAccountAdapter'
+ACCOUNT_ADAPTER = 'restaurant.account_adapter.NoNewUsersAccountAdapter'
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
 LOGIN_URL = '/accounts/login/'
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
