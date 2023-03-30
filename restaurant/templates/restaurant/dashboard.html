@@ -10,7 +10,7 @@
         </div>
         <div class="card col-md-5 mr-3">
             <h4 class="text-center pt-2">Today's Total Orders</h4>
-            <h1 class="text-center" style="color: red;">{{ total_orders }}</h1>
+            <h1 class="text-center" style="color: green;">{{ total_orders }}</h1>
         </div>
     </div>
 
@@ -29,6 +29,7 @@
                     <th scope="col">State</th>
                     <th scope="col">Zip Code</th>
                     <th scope="col">Is Paid?</th>
+                    <th scope='col'>Details</th>
                 </tr>
             </thead>
 
@@ -49,6 +50,11 @@
                         {% else %}
                         <i style='color: coral;' class='fas fa-times'></i>
                         {% endif %}
+                    </td>
+                    <td>
+                        <a href='{% url "order-details" order.pk %}'>
+                            <i class='far fa-edit'></i>
+                        </a>
                     </td>
                 </tr>
                 {% endfor %}
