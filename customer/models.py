@@ -28,7 +28,7 @@ class OrderModel(models.Model):
     street = models.CharField(max_length=50, blank=True)
     city = models.CharField(max_length=50, blank=True)
     state = models.CharField(max_length=15, blank=True)
-    zip_code = models.IntegerField(blank=True, default=00000)
+    zip_code = models.IntegerField(blank=True, null=True)
     is_paid = models.BooleanField(default=False)
     is_shipped = models.BooleanField(default=False)
 
