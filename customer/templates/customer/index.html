@@ -2,18 +2,26 @@
 
 {% block content %}
 <div class="container mb-5">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
-            <h1>Online Food Delivery Service</h1>
-        </div>
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-8 col-sm-12 offset-md-1 p-4 text-center">
+      <h1>Online Food Delivery Service</h1>
     </div>
-    <div class="row justify-content-center mt-1">
-        <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center">
-            <h2>Place an Order</h2>
-            <a href="{% url 'order' %}" class="btn btn-outline-primary">Order Now!</a>
-        </div>
+  </div>
+  <div class="row justify-content-center mt-1">
+    <div class="card col-md-5 col-sm-12 offset-md-1 p-4 text-center">
+      <h2>Place an Order</h2>
+      <a href="{% url 'order' %}" class="btn btn-outline-primary">Order Now!</a>
     </div>
+  </div>
 </div>
 
-
+<div class="container-fluid">
+  <h1>Hello World!</h1>
+  <p>Resize the browser window to see the effect.</p>
+  <div class="row">
+    <div class="col-sm-3 align-text-center" style="background-color:lavender;">.col-sm-3</div>
+    <div class="col-sm-6" style="background-color:lavenderblush;"><img src="../images/Houses of Parliament.jpg"></div>
+    <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+  </div>
+</div>
 {% endblock content %}
