@@ -106,3 +106,99 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 ---
 
 Happy coding!
+
+
+
+Readme 
+
+Introduction 
+
+This site is to satisfy the requirements of the third Code Institute Full Stack Bootcamp project which I have implemented by writing the code for a take-away restaurant allowing users full CRUD functionality, each part being discharged as follows: 
+
+Create – Entering orders 
+
+Read – A dashboard allows those with allowed usernames and passwords to review orders and cash received 
+
+Update – Orders can be paid for on collection or on order. The person ordering can pay with Paypal or pay on receipt. The payment status can be changed by staff which allows this to be updated. 
+
+Delete -  
+
+Throughout the project's development, Kanban boards were produced, and these are included in this document. The project was developed on Github so development of the app over time can be seen. 
+
+The project requires users to be able to log in and out without difficulty and this can be done and it has been set up to be public on Github. 
+
+ 
+
+Background 
+
+It was decided to satisfy the Code Institute’s project requirements by programing an ordering system for a restaurant. To make this more interesting the restaurant is Kosher and, as submission of the project coincides with Passover, the restaurant is Kosher for Passover. This has additional requirements that have nothing to do with coding and are outlined in Appendix XXX. The project was planned using Kanban boards and the first is shown in the next section. 
+
+The site enables management to add and remove dishes, change prices as needed, and provides basic management information. The management information provided is a list of the day's orders, how many orders were placed, and the day’s total revenue. The site runs on Django and uses an SQLite database, the default Django database, but the project required no SQL programming as that was all handled by Django. 
+
+On the other hand Django programming did have to be learned and this will be discussed briefly later. Django allowed the database to be programmed which produced much of the functionality of the site ranging from showing what products are available, to recording management figures, to allowing permitted users to change the restaurant’s offerings.  
+
+The screens seen by the user are HTML pages programmed by Django and are made responsive using Bootstrap.  
+
+ 
+
+Preparation 
+
+The site was built in the Github virtual environment so could be accessed from any of the college buildings and from home. While the site was being built, we were in three different classrooms in three different buildings, so a virtual environment was essential which also enabled the site to be worked on at home. 
+
+A virtual workstation was set up with the Code Institute template and the following were installed using Pip3: 
+
+Django – A high-level Python web framework that enables rapid development of secure and maintainable websites 
+
+Allauth - an integrated set of Django applications dealing with account authentication, registration, management, and third-party (social) account authentication. In this project it is only used for validating staff so they can manage the site but it can be extended if required 
+
+Crispy Forms - Django does not provide any form styling forms that look very bland. Crispy forms styles the forms. Although this is only evident in the login page in this project it can also generate emails which is where it would be used. As it stands the restaurant project only sends emails to the console 
+
+Pillow - An imaging library that adds image processing capabilities to Python. It provides extensive file format support and powerful image processing capabilities.  
+
+These were all installed with Pip3 which enables the installation and management of third-party software packages with features and functionality not found in the Python standard library. 
+
+Python appeared to have been installed already. 
+
+Having these installed allowed the Django site to be set up, 
+
+ 
+
+Introduction To Django 
+
+ When a conventional website receives an HTTP request from the client the application processes the correct response and it may then read or write information from a database or perform other tasks required to satisfy the request. The application will then return a response to the client, often dynamically creating an HTML page by inserting the retrieved data into placeholders in an HTML template. 
+
+Django web applications typically group the code that handles each of these steps into separate files: 
+
+ 
+
+Stages between a client request and a response to the browser 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+The app has a home page which was wireframed and it shows the kitchen and two other pictures, one of a restaurant sign to give anyone chancing on the site an understanding of what it is and another that shows an open sign to convey willingness and the desire to serve. 
+
+ 
