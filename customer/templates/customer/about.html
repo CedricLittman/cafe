@@ -1,4 +1,5 @@
 {% extends 'customer/base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container mb-5">
@@ -12,17 +13,20 @@
         </div>
     </div>
 
-    <img src="../customer/templates/images/Cheif Rabbi of Pimlico-1.png" alt="Girl in a jacket" width="500"
-        height="600">
+    
+
 
     <div class="container-fluid">
         <h1>Two Unequal Responsive Columns</h1>
         <p>IMAGE</p>
 
         <div class="row">
-            <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div>
-            <div class="col-sm-8" style="background-color:coral;">
-                <p>The effort to free ourselves from yesterday’s
+            <div class="flex-box col-sm-4">
+                <img src="{% static 'customer/Chief-2.png' %}" width='250px' height='250px' alt="My image">
+            </div>
+            <div class="col-sm-8" style="background-color:SeaShell;">
+                
+                <h4>The effort to free ourselves from yesterday’s
                     boundaries is a perpetual one. For freedom is more than the drive to escape foreign and negative
                     inhibitors, because no matter how free of them we are, we remain defined by the boundaries of self
                     and
@@ -30,7 +34,7 @@
                     reach beyond what we are. We should not expect this to happen quickly or automatically. It takes
                     time and it can take a lot of work.We should think of the Exodus from Egypt as a requirement to make
                     ourselves free. Passover teaches us two further important lessons. Having freed ourselves we cannot
-                    enslave others and we must not take pleasure in the suffering of our enemies.</p>
+                    enslave others and we must not take pleasure in the suffering of our enemies.</h4>
             </div>
         </div>
     </div>
